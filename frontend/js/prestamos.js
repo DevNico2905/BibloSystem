@@ -1,9 +1,9 @@
 // ============================
 // CONFIGURACIÓN
 // ============================
-const API_URL = 'http://localhost:8083/api/prestamos';
-const USUARIOS_URL = 'http://localhost:8082/api/usuarios';
-const LIBROS_URL = 'http://localhost:8081/api/libros';
+const API_URL = '/api/prestamos';
+const USUARIOS_URL = '/api/usuarios';
+const LIBROS_URL = '/api/libros';
 
 let todosLosPrestamos = [];
 

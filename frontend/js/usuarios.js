@@ -1,7 +1,7 @@
 // ============================
 // CONFIGURACIÓN
 // ============================
-const API_URL = 'http://localhost:8082/api/usuarios';
+const API_URL = '/api/usuarios';
 
 // ============================
 // CARGAR USUARIOS AL INICIAR

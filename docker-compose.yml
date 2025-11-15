@@ -1,5 +1,26 @@
 version: '3.8'
+
 services:
+  frontend:
+    build: ./frontend
+    ports:
+      - "90:90"
+    depends_on:
+      - libros-service
+      - usuarios-service
+      - prestamos-service
+    networks:
+      - biblioteca-net
+
+  usuarios-service:
+    build: ./usuarios-service
+    ports:
+      - "8082:8082"
+    environment:
+      - SERVER_PORT=8082
+    networks:
+      - biblioteca-net
+
   libros-service:
     build: ./libros-service
     ports:
@@ -7,14 +28,9 @@ services:
     depends_on:
       - usuarios-service
     environment:
-      - server.port=8081
-
-  usuarios-service:
-    build: ./usuarios-service
-    ports:
-      - "8082:8082"
-    environment:
-      - server.port=8082
+      - SERVER_PORT=8081
+    networks:
+      - biblioteca-net
 
   prestamos-service:
     build: ./prestamos-service
@@ -24,4 +40,10 @@ services:
       - libros-service
       - usuarios-service
     environment:
-      - server.port=8083
+      - SERVER_PORT=8083
+    networks:
+      - biblioteca-net
+
+networks:
+  biblioteca-net:
+    driver: bridge

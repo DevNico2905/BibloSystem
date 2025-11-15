@@ -1,7 +1,7 @@
 // ============================
 // CONFIGURACIÓN
 // ============================
-const API_URL = 'http://localhost:8081/api/libros';
+const API_URL = '/api/libros';
 
 // ============================
 // CARGAR LIBROS AL INICIAR
