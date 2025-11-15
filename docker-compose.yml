@@ -1,0 +1,27 @@
+version: '3.8'
+services:
+  libros-service:
+    build: ./libros-service
+    ports:
+      - "8081:8081"
+    depends_on:
+      - usuarios-service
+    environment:
+      - server.port=8081
+
+  usuarios-service:
+    build: ./usuarios-service
+    ports:
+      - "8082:8082"
+    environment:
+      - server.port=8082
+
+  prestamos-service:
+    build: ./prestamos-service
+    ports:
+      - "8083:8083"
+    depends_on:
+      - libros-service
+      - usuarios-service
+    environment:
+      - server.port=8083

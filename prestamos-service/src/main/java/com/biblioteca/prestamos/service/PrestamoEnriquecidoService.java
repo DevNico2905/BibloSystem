@@ -7,8 +7,8 @@ import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.springframework.web.client.RestTemplate;
 import org.springframework.web.client.RestClientException;
+import org.springframework.web.client.RestTemplate;
 
 import com.biblioteca.prestamos.dto.PrestamoDTO;
 import com.biblioteca.prestamos.model.Prestamo;
@@ -19,8 +19,8 @@ public class PrestamoEnriquecidoService {
     @Autowired
     private RestTemplate restTemplate;
 
-    private final String USUARIOS_SERVICE_URL = "http://localhost:8082/api/usuarios";
-    private final String LIBROS_SERVICE_URL = "http://localhost:8081/api/libros";
+    private final String USUARIOS_SERVICE_URL = "http://usuarios-service:8082/api/usuarios";
+    private final String LIBROS_SERVICE_URL = "http://libros-service:8081/api/libros";
 
     // Cache simple para evitar múltiples llamadas al mismo recurso
     private Map<Long, String> usuarioCache = new HashMap<>();
