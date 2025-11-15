@@ -1,0 +1,38 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "LibrosService",
+      "type": "java",
+      "name": "Spring Boot App",
+      "request": "launch",
+      "cwd": "${workspaceFolder}/libros-service",
+      "mainClass": "com.biblioteca.libros.LibrosServiceApplication",
+      "projectName": "libros-service",
+      "preLaunchTask": "java: maven build libros-service",
+      "args": ""
+    },
+    {
+      "name": "UsuariosService",
+      "type": "java",
+      "name": "Spring Boot App",
+      "request": "launch",
+      "cwd": "${workspaceFolder}/usuarios-service",
+      "mainClass": "com.biblioteca.usuarios.UsuariosServiceApplication",
+      "projectName": "usuarios-service",
+      "preLaunchTask": "java: maven build usuarios-service",
+      "args": ""
+    },
+    {
+      "name": "PrestamosService",
+      "type": "java",
+      "name": "Spring Boot App",
+      "request": "launch",
+      "cwd": "${workspaceFolder}/prestamos-service",
+      "mainClass": "com.biblioteca.prestamos.PrestamosServiceApplication",
+      "projectName": "prestamos-service",
+      "preLaunchTask": "java: maven build prestamos-service",
+      "args": ""
+    }
+  ]
+}

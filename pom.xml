@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<groupId>com.biblioteca</groupId>
+	<artifactId>sistema-biblioteca</artifactId>
+	<version>1.0.0</version>
+	<packaging>pom</packaging>
+
+	<name>Sistema Biblioteca</name>
+	<description>Sistema de gestión de biblioteca con microservicios</description>
+
+	<modules>
+		<module>libros-service</module>
+		<module>usuarios-service</module>
+		<module>prestamos-service</module>
+	</modules>
+
+	<properties>
+		<maven.compiler.source>21</maven.compiler.source>
+		<maven.compiler.target>21</maven.compiler.target>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<!-- Static analysis versions -->
+		<checkstyle.plugin.version>3.2.2</checkstyle.plugin.version>
+		<spotbugs.plugin.version>4.7.3</spotbugs.plugin.version>
+		<spotbugs.version>4.5.0</spotbugs.version>
+	</properties>
+
+	<build>
+		<pluginManagement>
+			<plugins>
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-checkstyle-plugin</artifactId>
+					<version>${checkstyle.plugin.version}</version>
+					<configuration>
+						<configLocation>google_checks.xml</configLocation>
+						<encoding>${project.build.sourceEncoding}</encoding>
+						<consoleOutput>true</consoleOutput>
+						<failsOnError>false</failsOnError>
+						<failOnViolation>false</failOnViolation>
+					</configuration>
+					<executions>
+						<execution>
+							<id>checkstyle</id>
+							<phase>verify</phase>
+							<goals>
+								<goal>check</goal>
+							</goals>
+						</execution>
+					</executions>
+				</plugin>
+				<plugin>
+					<groupId>com.github.spotbugs</groupId>
+					<artifactId>spotbugs-maven-plugin</artifactId>
+					<version>${spotbugs.plugin.version}</version>
+					<configuration>
+						<effort>Max</effort>
+						<threshold>Low</threshold>
+						<failOnError>false</failOnError>
+						<includeTests>false</includeTests>
+					</configuration>
+					<executions>
+						<execution>
+							<id>spotbugs</id>
+							<phase>verify</phase>
+							<goals>
+								<goal>check</goal>
+							</goals>
+						</execution>
+					</executions>
+				</plugin>
+			</plugins>
+		</pluginManagement>
+	</build>
+
+</project>

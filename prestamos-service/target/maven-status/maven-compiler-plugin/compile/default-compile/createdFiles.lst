@@ -1,0 +1,7 @@
+com\biblioteca\prestamos\service\PrestamoEnriquecidoService.class
+com\biblioteca\prestamos\repository\PrestamoRepository.class
+com\biblioteca\prestamos\model\Prestamo.class
+com\biblioteca\prestamos\PrestamosServiceApplication.class
+com\biblioteca\prestamos\controller\PrestamoController.class
+com\biblioteca\prestamos\dto\PrestamoDTO.class
+com\biblioteca\prestamos\service\PrestamoService.class

@@ -1,0 +1,23 @@
+{
+  "java.server.launchMode": "Standard",
+  "[java]": {
+    "editor.defaultFormatter": "redhat.java",
+    "editor.formatOnSave": true,
+    "editor.formatOnType": true
+  },
+  "java.configuration.updateBuildConfiguration": "automatic",
+  "java.import.maven.enabled": true,
+  "java.saveActions.organizeImports": true,
+  "java.project.referencedLibraries": {
+    "include": [
+      "lib/**/*.jar"
+    ],
+    "exclude": [
+      "**/node_modules/**",
+      "**/dist/**"
+    ]
+  },
+  "maven.executable.preferMavenFromPath": true,
+  "maven.view": "flat",
+  "java.compile.nullAnalysis.mode": "automatic"
+}

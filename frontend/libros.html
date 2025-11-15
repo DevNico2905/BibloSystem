@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestión de Libros - BiblioSystem</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navegación -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-brand">
+                <i class="fas fa-book-open"></i>
+                <span>BiblioSystem</span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="libros.html" class="active">Libros</a></li>
+                <li><a href="usuarios.html">Usuarios</a></li>
+                <li><a href="prestamos.html">Préstamos</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Contenido Principal -->
+    <div class="page-container">
+        <div class="page-header">
+            <h1><i class="fas fa-book"></i> Gestión de Libros</h1>
+            <button class="btn btn-primary" onclick="mostrarFormulario()">
+                <i class="fas fa-plus"></i> Agregar Libro
+            </button>
+        </div>
+
+        <!-- Buscador -->
+        <div class="search-box">
+            <input type="text" id="searchInput" placeholder="Buscar libros por título..." onkeyup="buscarLibros()">
+            <i class="fas fa-search"></i>
+        </div>
+
+        <!-- Formulario de Libro (oculto inicialmente) -->
+        <div id="formularioLibro" class="form-container" style="display: none;">
+            <div class="form-header">
+                <h2 id="formTitle">Agregar Nuevo Libro</h2>
+                <button class="btn-close" onclick="cerrarFormulario()">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <form id="libroForm" onsubmit="guardarLibro(event)">
+                <input type="hidden" id="libroId">
+                
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label for="titulo">Título *</label>
+                        <input type="text" id="titulo" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="autor">Autor *</label>
+                        <input type="text" id="autor" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="isbn">ISBN</label>
+                        <input type="text" id="isbn">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="categoria">Categoría *</label>
+                        <select id="categoria" required>
+                            <option value="">Seleccione una categoría</option>
+                            <option value="Ficción">Ficción</option>
+                            <option value="No Ficción">No Ficción</option>
+                            <option value="Ciencia">Ciencia</option>
+                            <option value="Tecnología">Tecnología</option>
+                            <option value="Historia">Historia</option>
+                            <option value="Biografía">Biografía</option>
+                            <option value="Infantil">Infantil</option>
+                            <option value="Juvenil">Juvenil</option>
+                            <option value="Romance">Romance</option>
+                            <option value="Terror">Terror</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="editorial">Editorial</label>
+                        <input type="text" id="editorial">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="fechaPublicacion">Fecha de Publicación</label>
+                        <input type="date" id="fechaPublicacion">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="stock">Stock Total *</label>
+                        <input type="number" id="stock" min="0" required>
+                    </div>
+
+                    <div class="form-group full-width">
+                        <label for="descripcion">Descripción</label>
+                        <textarea id="descripcion" rows="3"></textarea>
+                    </div>
+                </div>
+
+                <div class="form-actions">
+                    <button type="button" class="btn btn-secondary" onclick="cerrarFormulario()">
+                        Cancelar
+                    </button>
+                    <button type="submit" class="btn btn-success">
+                        <i class="fas fa-save"></i> Guardar
+                    </button>
+                </div>
+            </form>
+        </div>
+
+        <!-- Tabla de Libros -->
+        <div class="table-container">
+            <table class="data-table">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Título</th>
+                        <th>Autor</th>
+                        <th>Categoría</th>
+                        <th>ISBN</th>
+                        <th>Stock</th>
+                        <th>Disponible</th>
+                        <th>Acciones</th>
+                    </tr>
+                </thead>
+                <tbody id="tablaLibros">
+                    <tr>
+                        <td colspan="8" class="text-center">Cargando libros...</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- Notificaciones -->
+    <div id="notification" class="notification"></div>
+
+    <!-- JavaScript -->
+    <script src="js/libros.js"></script>
+</body>
+</html>

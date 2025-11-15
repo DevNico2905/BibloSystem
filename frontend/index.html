@@ -1,0 +1,88 @@
+ <!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistema de Biblioteca - Inicio</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navegación -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-brand">
+                <i class="fas fa-book-open"></i>
+                <span>BiblioSystem</span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html" class="active">Inicio</a></li>
+                <li><a href="libros.html">Libros</a></li>
+                <li><a href="usuarios.html">Usuarios</a></li>
+                <li><a href="prestamos.html">Préstamos</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Bienvenido al Sistema de Biblioteca</h1>
+            <p>Gestiona libros, usuarios y préstamos de manera eficiente</p>
+            <div class="hero-buttons">
+                <a href="libros.html" class="btn btn-primary">
+                    <i class="fas fa-book"></i> Ver Libros
+                </a>
+                <a href="usuarios.html" class="btn btn-secondary">
+                    <i class="fas fa-users"></i> Ver Usuarios
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Cards de Funcionalidades -->
+    <section class="features">
+        <div class="container">
+            <h2 class="section-title">Funcionalidades Principales</h2>
+            <div class="features-grid">
+                <!-- Card Libros -->
+                <div class="feature-card">
+                    <div class="card-icon">
+                        <i class="fas fa-book"></i>
+                    </div>
+                    <h3>Gestión de Libros</h3>
+                    <p>Administra el catálogo completo de libros, controla stock y disponibilidad</p>
+                    <a href="libros.html" class="card-link">Ir a Libros →</a>
+                </div>
+
+                <!-- Card Usuarios -->
+                <div class="feature-card">
+                    <div class="card-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h3>Gestión de Usuarios</h3>
+                    <p>Registra y administra los usuarios de la biblioteca</p>
+                    <a href="usuarios.html" class="card-link">Ir a Usuarios →</a>
+                </div>
+
+                <!-- Card Préstamos -->
+                <div class="feature-card">
+                    <div class="card-icon">
+                        <i class="fas fa-exchange-alt"></i>
+                    </div>
+                    <h3>Control de Préstamos</h3>
+                    <p>Realiza y gestiona préstamos y devoluciones de libros</p>
+                    <a href="prestamos.html" class="card-link">Ir a Préstamos →</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 Sistema de Biblioteca | Desarrollado con Spring Boot</p>
+        </div>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,5 @@
+com\biblioteca\usuarios\repository\UsuarioRepository.class
+com\biblioteca\usuarios\controller\UsuarioController.class
+com\biblioteca\usuarios\service\UsuarioService.class
+com\biblioteca\usuarios\UsuariosServiceApplication.class
+com\biblioteca\usuarios\model\Usuario.class
